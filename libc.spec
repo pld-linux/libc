@@ -11,9 +11,11 @@ Group:		Libraries
 #######		From Slackware libc.so.5 & libm.so.5
 #######		Other libraries from RH-5.2 updates
 Source0:	%{name}-%{version}-compatibility_libs.tar.bz2
+# Source0-md5:	a693059b39a925c9a93cb2fdf4f44963
 # latest sources
 # Source1:	ftp://ftp.kernel.org/pub/linux/libs/libc5/%{name}5.cvs.tar.bz2
 Source1:	ftp://ftp.kernel.org/pub/linux/libs/libc5/old/%{name}-%{version}.tar.bz2
+# Source1-md5:	3814ea25047461fee1130713d34869cc
 Requires(post):	grep
 Requires(post,postun):	/sbin/ldconfig
 Requires(postun):	fileutils
