@@ -6,15 +6,18 @@ Summary(tr):	Eski libc.so.5 uygulamalarý ile uyumlululuðu saðlayan kitaplýklar
 Name:		libc
 Version:	5.4.46
 Release:	2
-Exclusivearch:	%{ix86}
-Exclusiveos:	Linux
-Copyright:	distributable
+License:	distributable
 Group:		Libraries
+Group(de):	Libraries
+Group(es):	Bibliotecas
 Group(fr):	Librairies
 Group(pl):	Biblioteki
+Group(pt_BR):	Bibliotecas
+Group(ru):	âÉÂÌÉÏÔÅËÉ
+Group(uk):	â¦ÂÌ¦ÏÔÅËÉ
 #######		From Slackware libc.so.5 & libm.so.5
 #######		Other libraries from RH-5.2 updates
-Source0:	libc-5.4.46.tar.bz2
+Source0:	%{name}-%{version}.tar.bz2
 Prereq:		/sbin/ldconfig grep fileutils
 Requires:	/lib/ld-linux.so.1
 Requires:	ld.so >= 1.9.9
@@ -23,6 +26,8 @@ Provides:	libm.so.5
 Provides:	libstdc++.so.27
 Provides:	libg++.so.27
 Autoreqprov:	0
+ExclusiveArch:	%{ix86}
+ExclusiveOS:	Linux
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
@@ -53,7 +58,7 @@ Dawno, dawno temu aplikacje korzysta³y z wersji 5 biblioteki libc. Ten
 pakiet zawiera tê i kilka innych, pomocniczych bibliotek, umo¿liwiaj±c
 tym samym uruchomienie starszych programów. Przed zainstalowaniem,
 sprawd¼ jednak, czy nie istniej± ich nowsze wersje, dzia³aj±ce z
-bibliotekê libc 6.
+bibliotek± libc 6.
 
 %description -l tr
 Eski Linux sistemleri libc 5 üzerine kurulmuþtu. Bu paket, libc 5
@@ -71,8 +76,11 @@ for n in *; do
 done
 
 (cd $RPM_BUILD_ROOT/lib ;\
-ln -s ..%{_libdir}/libc5/libc.so.5.4.46 libc.so.5 ;\
-ln -s ..%{_libdir}/libc5/libm.so.5.0.9 libm.so.5 )
+ln -sf ..%{_libdir}/libc5/libc.so.5.4.46 libc.so.5 ;\
+ln -sf ..%{_libdir}/libc5/libm.so.5.0.9 libm.so.5 )
+
+%clean
+rm -rf $RPM_BUILD_ROOT
 
 %post
 if ! grep '^%{_libdir}/libc5$' /etc/ld.so.conf > /dev/null 2>/dev/null; then
@@ -86,9 +94,6 @@ if [ "$1" = '0' ]; then
 	grep -v '^%{_libdir}/libc5$' /etc/ld.so.conf > /etc/ld.so.conf.new 2>/dev/null
 	mv /etc/ld.so.conf.new /etc/ld.so.conf
 fi
-
-%clean
-rm -rf $RPM_BUILD_ROOT
 
 %files
 %defattr(644,root,root,755)
