@@ -1,4 +1,4 @@
-Summary:	The compatibility libraries needed by old libc.so.5 applications.
+Summary:	The compatibility libraries needed by old libc.so.5 applications
 Summary(de):	Kompabilitäts-Libraries für alte libc.so.5-Anwendungen
 Summary(fr):	Librairies de compatibilité pour les vieilles appl. libc.so.5
 Summary(pl):	Biblioteki umo¿liwiaj±ce uruchomienie aplikacji libc.so.5
