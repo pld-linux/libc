@@ -27,7 +27,7 @@ Provides:	libc.so.5
 Provides:	libm.so.5
 Provides:	libstdc++.so.27
 Provides:	libg++.so.27
-Autoreqprov:	0
+AutoReqProv:	no
 ExclusiveArch:	%{ix86}
 ExclusiveOS:	Linux
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
