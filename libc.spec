@@ -7,7 +7,7 @@ Summary(pt_BR):	Biblioteca compartilhada padrão para programas
 Summary(tr):	Eski libc.so.5 uygulamalarý ile uyumlululuðu saðlayan kitaplýklar
 Name:		libc
 Version:	5.4.46
-Release:	3
+Release:	4
 License:	distributable
 Group:		Libraries
 #######		From Slackware libc.so.5 & libm.so.5
