@@ -67,7 +67,7 @@ sistemlerde çalýþmasýný saðlayan kitaplýklarý içerir.
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{/lib,%{_libdir}/libc5}
 for n in *; do
-	install -s $n $RPM_BUILD_ROOT%{_libdir}/libc5/
+	install $n $RPM_BUILD_ROOT%{_libdir}/libc5/
 done
 
 (cd $RPM_BUILD_ROOT/lib ;\
