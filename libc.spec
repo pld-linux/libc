@@ -5,12 +5,15 @@ Summary(pl):	Biblioteki umo¿liwiaj±ce uruchomienie aplikacji libc.so.5
 Summary(tr):	Eski libc.so.5 uygulamalarý ile uyumlululuðu saðlayan kitaplýklar
 Name:		libc
 Version:	5.4.46
-Release:	2
+Release:	3
 License:	distributable
 Group:		Libraries
 #######		From Slackware libc.so.5 & libm.so.5
 #######		Other libraries from RH-5.2 updates
-Source0:	%{name}-%{version}.tar.bz2
+Source0:	%{name}-%{version}-compatibility_libs.tar.bz2
+# latest sources
+# Source1:	ftp://ftp.kernel.org/pub/linux/libs/libc5/%{name}5.cvs.tar.bz2
+Source1:	ftp://ftp.kernel.org/pub/linux/libs/libc5/old/%{name}-%{version}.tar.bz2
 Prereq:		/sbin/ldconfig grep fileutils
 Requires:	/lib/ld-linux.so.1
 Requires:	ld.so >= 1.9.9
