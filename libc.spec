@@ -8,13 +8,6 @@ Version:	5.4.46
 Release:	2
 License:	distributable
 Group:		Libraries
-Group(de):	Libraries
-Group(es):	Bibliotecas
-Group(fr):	Librairies
-Group(pl):	Biblioteki
-Group(pt_BR):	Bibliotecas
-Group(ru):	Библиотеки
-Group(uk):	Б╕бл╕отеки
 #######		From Slackware libc.so.5 & libm.so.5
 #######		Other libraries from RH-5.2 updates
 Source0:	%{name}-%{version}.tar.bz2
