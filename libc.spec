@@ -71,8 +71,8 @@ for n in *; do
 done
 
 (cd $RPM_BUILD_ROOT/lib ;\
-ln -s ../%{_libdir}/libc5/libc.so.5.4.46 libc.so.5 ;\
-ln -s ../%{_libdir}/libc5/libm.so.5.0.9 libm.so.5 )
+ln -s ..%{_libdir}/libc5/libc.so.5.4.46 libc.so.5 ;\
+ln -s ..%{_libdir}/libc5/libm.so.5.0.9 libm.so.5 )
 
 %post
 if ! grep '^%{_libdir}/libc5$' /etc/ld.so.conf > /dev/null 2>/dev/null; then
@@ -81,11 +81,11 @@ fi
 /sbin/ldconfig
 
 %postun
+/sbin/ldconfig
 if [ "$1" = '0' ]; then
 	grep -v '^%{_libdir}/libc5$' /etc/ld.so.conf > /etc/ld.so.conf.new 2>/dev/null
 	mv /etc/ld.so.conf.new /etc/ld.so.conf
 fi
-/sbin/ldconfig
 
 %clean
 rm -rf $RPM_BUILD_ROOT
