@@ -22,7 +22,7 @@ Provides:	libm.so.5
 Provides:	libstdc++.so.27
 Provides:	libg++.so.27
 Autoreqprov:	0
-Buildroot:	/tmp/%{name}-%{version}-root
+BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
 %description
 Older Linux systems (including all Red Hat Linux releases between 2.0 and
