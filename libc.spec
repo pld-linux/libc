@@ -14,7 +14,9 @@ Source0:	%{name}-%{version}-compatibility_libs.tar.bz2
 # latest sources
 # Source1:	ftp://ftp.kernel.org/pub/linux/libs/libc5/%{name}5.cvs.tar.bz2
 Source1:	ftp://ftp.kernel.org/pub/linux/libs/libc5/old/%{name}-%{version}.tar.bz2
-Prereq:		/sbin/ldconfig grep fileutils
+Requires(post):	grep
+Requires(post,postun):	/sbin/ldconfig
+Requires(postun):	fileutils
 Requires:	/lib/ld-linux.so.1
 Requires:	ld.so >= 1.9.9
 Provides:	libc.so.5
@@ -79,16 +81,18 @@ ln -sf ..%{_libdir}/libc5/libm.so.5.0.9 libm.so.5 )
 rm -rf $RPM_BUILD_ROOT
 
 %post
-if ! grep '^%{_libdir}/libc5$' /etc/ld.so.conf > /dev/null 2>/dev/null; then
+umask 022
+if ! grep -qs '^%{_libdir}/libc5$' /etc/ld.so.conf ; then
 	echo "%{_libdir}/libc5" >> /etc/ld.so.conf
 fi
 /sbin/ldconfig
 
 %postun
+umask 022
 /sbin/ldconfig
 if [ "$1" = '0' ]; then
 	grep -v '^%{_libdir}/libc5$' /etc/ld.so.conf > /etc/ld.so.conf.new 2>/dev/null
-	mv /etc/ld.so.conf.new /etc/ld.so.conf
+	mv -f /etc/ld.so.conf.new /etc/ld.so.conf
 fi
 
 %files
