@@ -1,7 +1,9 @@
 Summary:	The compatibility libraries needed by old libc.so.5 applications
 Summary(de):	Kompabilitäts-Libraries für alte libc.so.5-Anwendungen
+Summary(es):	Biblioteca compartida padrón para programas
 Summary(fr):	Librairies de compatibilité pour les vieilles appl. libc.so.5
 Summary(pl):	Biblioteki umo¿liwiaj±ce uruchomienie aplikacji libc.so.5
+Summary(pt_BR):	Biblioteca compartilhada padrão para programas
 Summary(tr):	Eski libc.so.5 uygulamalarý ile uyumlululuðu saðlayan kitaplýklar
 Name:		libc
 Version:	5.4.46
@@ -46,6 +48,15 @@ diese Libraries und andere auf libc 5 basierende mit ein, so daß
 ältere Applikationen auf Systemen mit glibc (libc6) gefahren werden
 können.
 
+%description -l es
+Contiene las bibliotecas padrón que usan muchos programas en el
+sistema.  Para guardar espacio en disco y memoria, y para facilitar
+actualizaciones, código común en el sistema se deja en un lugar
+y se comparte entre los programas. Este paquete contiene los más
+importantes conjuntos de bibliotecas compartidas, la biblioteca
+padrón C, y la biblioteca matemática padrón. Sin este paquete un
+sistema Linux no funcionará.
+
 %description -l fr
 Les anciens systèmes Linux (y compris les versions Red Hat de 2.0 à
 4.2 comprise) étaient basés sur libc 5. Ce paquetage contient ces
@@ -59,6 +70,15 @@ pakiet zawiera tê i kilka innych, pomocniczych bibliotek, umo¿liwiaj±c
 tym samym uruchomienie starszych programów. Przed zainstalowaniem,
 sprawd¼ jednak, czy nie istniej± ich nowsze wersje, dzia³aj±ce z
 bibliotek± libc 6.
+
+%description -l pt_BR
+Contém as bibliotecas-padrão que são usadas por muitos programas
+no sistema. Para salvar espaço em disco e memória, e para
+facilitar atualizações, código comum no sistema é deixado em
+um lugar e compartilhado entre os programas. Este pacote contém
+os mais importantes conjuntos de bibliotecas compartilhadas, a
+biblioteca-padrão C, e a biblioteca matemática-padrão. Sem este
+pacote um sistema Linux não irá funcionar.
 
 %description -l tr
 Eski Linux sistemleri libc 5 üzerine kurulmuþtu. Bu paket, libc 5
