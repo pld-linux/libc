@@ -9,11 +9,12 @@ Release:	2
 Exclusivearch:	%{ix86}
 Exclusiveos:	Linux
 Copyright:	distributable
-Group:		System Environment/Libraries
+Group:		Libraries
+Group(pl):	Biblioteki
 #######		From Slackware libc.so.5 & libm.so.5
-#######		Other libraries from RH-5.2 updates 
+#######		Other libraries from RH-5.2 updates
 Source:		libc-5.4.46.tar.bz2
-Prereq:		/sbin/ldconfig grep fileutils 
+Prereq:		/sbin/ldconfig grep fileutils
 Requires:	/lib/ld-linux.so.1
 Requires:	ld.so >= 1.9.9
 Provides:	libc.so.5
@@ -21,23 +22,21 @@ Provides:	libm.so.5
 Provides:	libstdc++.so.27
 Provides:	libg++.so.27
 Autoreqprov:	0
-Buildroot:	/tmp/%{name}-%{version}-root/
+Buildroot:	/tmp/%{name}-%{version}-root
 
 %description
-Older Linux systems (including all Red Hat Linux releases between 2.0
-and 4.2, inclusive) were based on libc version 5. The libc package
-includes the libc5 libraries and other libraries based on libc5.  With
-these libraries installed, old applications which need them will be able
-to run on your glibc (libc version 6) based system.
-
-The libc package should be installed so that you can run older applications
-which need libc version 5.
+Older Linux systems (including all Red Hat Linux releases between 2.0 and
+4.2, inclusive) were based on libc version 5. The libc package includes the
+libc5 libraries and other libraries based on libc5.  With these libraries
+installed, old applications which need them will be able to run on your
+glibc (libc version 6) based system.  The libc package should be installed
+so that you can run older applications which need libc version 5.
 
 %description -l de
-Ältere Linux-Systeme (einschließlich aller Red-Hat-Linux-Releases 
-zwischen 2.0 und 4.2 inkl.) basierten auf libc5. Dieses Paket schließt 
-diese Libraries und andere auf libc 5 basierende mit ein, so daß ältere
-Applikationen auf Systemen mit glibc (libc6) gefahren werden können. 
+Ältere Linux-Systeme (einschließlich aller Red-Hat-Linux-Releases  zwischen
+2.0 und 4.2 inkl.) basierten auf libc5. Dieses Paket schließt  diese
+Libraries und andere auf libc 5 basierende mit ein, so daß ältere
+Applikationen auf Systemen mit glibc (libc6) gefahren werden können.
 
 %description -l fr
 Les anciens systèmes Linux (y compris les versions Red Hat de 2.0 à 4.2
@@ -47,15 +46,14 @@ applications de tourner sur les systèmes basés sur glibc (libc 6).
 
 %description -l pl
 Dawno, dawno temu aplikacje korzysta³y z wersji 5 biblioteki libc. Ten
-pakiet zawiera tê i kilka innych, pomocniczych bibliotek, umo¿liwiaj±c
-tym samym uruchomienie starszych programów. Przed zainstalowaniem,
-sprawd¼ jednak, czy nie istniej± ich nowsze wersje, dzia³aj±ce z
-bibliotekê libc 6. 
+pakiet zawiera tê i kilka innych, pomocniczych bibliotek, umo¿liwiaj±c tym
+samym uruchomienie starszych programów. Przed zainstalowaniem, sprawd¼
+jednak, czy nie istniej± ich nowsze wersje, dzia³aj±ce z bibliotekê libc 6.
 
 %description -l tr
-Eski Linux sistemleri libc 5 üzerine kurulmuþtu. Bu paket, libc 5 kitaplýklarý
-ve eski uygulamalarýn glibc (libc 6) üzerine kurulu olan sistemlerde
-çalýþmasýný saðlayan kitaplýklarý içerir.
+Eski Linux sistemleri libc 5 üzerine kurulmuþtu. Bu paket, libc 5
+kitaplýklarý ve eski uygulamalarýn glibc (libc 6) üzerine kurulu olan
+sistemlerde çalýþmasýný saðlayan kitaplýklarý içerir.
 
 %prep
 %setup -q -n %{name}5
@@ -64,7 +62,7 @@ ve eski uygulamalarýn glibc (libc 6) üzerine kurulu olan sistemlerde
 rm -rf $RPM_BUILD_ROOT
 install -d $RPM_BUILD_ROOT{/lib,%{_libdir}/libc5}
 for n in *; do
-    install -s $n $RPM_BUILD_ROOT%{_libdir}/libc5/
+	install -s $n $RPM_BUILD_ROOT%{_libdir}/libc5/
 done
 
 (cd $RPM_BUILD_ROOT/lib ;\
@@ -73,14 +71,14 @@ ln -s ../%{_libdir}/libc5/libm.so.5.0.9 libm.so.5 )
 
 %post
 if ! grep '^%{_libdir}/libc5$' /etc/ld.so.conf > /dev/null 2>/dev/null; then
-    echo "%{_libdir}/libc5" >> /etc/ld.so.conf
+	echo "%{_libdir}/libc5" >> /etc/ld.so.conf
 fi
 /sbin/ldconfig
 
 %postun
 if [ "$1" = '0' ]; then
-    grep -v '^%{_libdir}/libc5$' /etc/ld.so.conf > /etc/ld.so.conf.new 2>/dev/null
-    mv /etc/ld.so.conf.new /etc/ld.so.conf
+	grep -v '^%{_libdir}/libc5$' /etc/ld.so.conf > /etc/ld.so.conf.new 2>/dev/null
+	mv /etc/ld.so.conf.new /etc/ld.so.conf
 fi
 /sbin/ldconfig
 
