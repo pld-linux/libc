@@ -7,7 +7,7 @@ Summary(pt_BR):	Biblioteca compartilhada padrão para programas
 Summary(tr):	Eski libc.so.5 uygulamalarý ile uyumlululuðu saðlayan kitaplýklar
 Name:		libc
 Version:	5.4.46
-Release:	4
+Release:	5
 License:	distributable
 Group:		Libraries
 #######		From Slackware libc.so.5 & libm.so.5
@@ -18,10 +18,10 @@ Source0:	%{name}-%{version}-compatibility_libs.tar.bz2
 # Source1:	ftp://ftp.kernel.org/pub/linux/libs/libc5/%{name}5.cvs.tar.bz2
 Source1:	ftp://ftp.kernel.org/pub/linux/libs/libc5/old/%{name}-%{version}.tar.bz2
 # Source1-md5:	3814ea25047461fee1130713d34869cc
-Requires(post):	grep
 Requires(post,postun):	/sbin/ldconfig
-Requires(postun):	fileutils
+Requires(triggerpostun):	sed >= 4.0
 Requires:	/lib/ld-linux.so.1
+Requires:	glibc >= 6:2.3.5-7.6
 Requires:	ld.so >= 1.9.9
 Provides:	libc.so.5
 Provides:	libm.so.5
@@ -99,26 +99,21 @@ done
 ln -sf ..%{_libdir}/libc5/libc.so.5.4.46 libc.so.5 ;\
 ln -sf ..%{_libdir}/libc5/libm.so.5.0.9 libm.so.5 )
 
+install -d $RPM_BUILD_ROOT/etc/ld.so.conf.d
+echo '%{_libdir}/libc5' > $RPM_BUILD_ROOT/etc/ld.so.conf.d/%{name}.conf
+
 %clean
 rm -rf $RPM_BUILD_ROOT
 
-%post
-umask 022
-if ! grep -qs '^%{_libdir}/libc5$' /etc/ld.so.conf ; then
-	echo "%{_libdir}/libc5" >> /etc/ld.so.conf
-fi
-/sbin/ldconfig
+%post -p	/sbin/ldconfig
+%postun -p	/sbin/ldconfig
 
-%postun
-umask 022
-/sbin/ldconfig
-if [ "$1" = '0' ]; then
-	grep -v '^%{_libdir}/libc5$' /etc/ld.so.conf > /etc/ld.so.conf.new 2>/dev/null
-	mv -f /etc/ld.so.conf.new /etc/ld.so.conf
-fi
+%triggerpostun -- libc < 5.4.46-4.1
+sed -i -e "/^%(echo %{_libdir}/libc5 | sed -e 's,/,\\/,g')$/d" /etc/ld.so.conf
 
 %files
 %defattr(644,root,root,755)
+%verify(not md5 mtime size) /etc/ld.so.conf.d/*.conf
 %dir %{_libdir}/libc5
 %attr(755,root,root) %{_libdir}/libc5/*
 %attr(755,root,root) /lib/*
