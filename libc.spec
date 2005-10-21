@@ -113,7 +113,7 @@ sed -i -e "/^%(echo %{_libdir}/libc5 | sed -e 's,/,\\/,g')$/d" /etc/ld.so.conf
 
 %files
 %defattr(644,root,root,755)
-%verify(not md5 mtime size) /etc/ld.so.conf.d/*.conf
+/etc/ld.so.conf.d/*.conf
 %dir %{_libdir}/libc5
 %attr(755,root,root) %{_libdir}/libc5/*
 %attr(755,root,root) /lib/*
