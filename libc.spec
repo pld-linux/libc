@@ -1,10 +1,10 @@
 Summary:	The compatibility libraries needed by old libc.so.5 applications
-Summary(de):	Kompabilitäts-Libraries für alte libc.so.5-Anwendungen
-Summary(es):	Biblioteca compartida padrón para programas
-Summary(fr):	Librairies de compatibilité pour les vieilles appl. libc.so.5
-Summary(pl):	Biblioteki umo¿liwiaj±ce uruchomienie aplikacji libc.so.5
-Summary(pt_BR):	Biblioteca compartilhada padrão para programas
-Summary(tr):	Eski libc.so.5 uygulamaları ile uyumlululuğu sağlayan kitaplıklar
+Summary(de.UTF-8):   KompabilitÃ¤ts-Libraries fÃ¼r alte libc.so.5-Anwendungen
+Summary(es.UTF-8):   Biblioteca compartida padrÃ³n para programas
+Summary(fr.UTF-8):   Librairies de compatibilitÃ© pour les vieilles appl. libc.so.5
+Summary(pl.UTF-8):   Biblioteki umoÅ¼liwiajÄ…ce uruchomienie aplikacji libc.so.5
+Summary(pt_BR.UTF-8):   Biblioteca compartilhada padrÃ£o para programas
+Summary(tr.UTF-8):   Eski libc.so.5 uygulamalarÄ± ile uyumlululuÄŸu saÄŸlayan kitaplÄ±klar
 Name:		libc
 Version:	5.4.46
 Release:	5
@@ -41,49 +41,49 @@ able to run on your glibc (libc version 6) based system. The libc
 package should be installed so that you can run older applications
 which need libc version 5.
 
-%description -l de
-Ältere Linux-Systeme (einschließlich aller Red-Hat-Linux-Releases
-zwischen 2.0 und 4.2 inkl.) basierten auf libc5. Dieses Paket schließt
-diese Libraries und andere auf libc 5 basierende mit ein, so daß
-ältere Applikationen auf Systemen mit glibc (libc6) gefahren werden
-können.
+%description -l de.UTF-8
+Ã„ltere Linux-Systeme (einschlieÃŸlich aller Red-Hat-Linux-Releases
+zwischen 2.0 und 4.2 inkl.) basierten auf libc5. Dieses Paket schlieÃŸt
+diese Libraries und andere auf libc 5 basierende mit ein, so daÃŸ
+Ã¤ltere Applikationen auf Systemen mit glibc (libc6) gefahren werden
+kÃ¶nnen.
 
-%description -l es
-Contiene las bibliotecas padrón que usan muchos programas en el
+%description -l es.UTF-8
+Contiene las bibliotecas padrÃ³n que usan muchos programas en el
 sistema.  Para guardar espacio en disco y memoria, y para facilitar
-actualizaciones, código común en el sistema se deja en un lugar
-y se comparte entre los programas. Este paquete contiene los más
+actualizaciones, cÃ³digo comÃºn en el sistema se deja en un lugar
+y se comparte entre los programas. Este paquete contiene los mÃ¡s
 importantes conjuntos de bibliotecas compartidas, la biblioteca
-padrón C, y la biblioteca matemática padrón. Sin este paquete un
-sistema Linux no funcionará.
+padrÃ³n C, y la biblioteca matemÃ¡tica padrÃ³n. Sin este paquete un
+sistema Linux no funcionarÃ¡.
 
-%description -l fr
-Les anciens systèmes Linux (y compris les versions Red Hat de 2.0 à
-4.2 comprise) étaient basés sur libc 5. Ce paquetage contient ces
-bibliothèques et celles qui sont basées sur la libc 5 pour permettre
-aux anciennes applications de tourner sur les systèmes basés sur glibc
+%description -l fr.UTF-8
+Les anciens systÃ¨mes Linux (y compris les versions Red Hat de 2.0 Ã 
+4.2 comprise) Ã©taient basÃ©s sur libc 5. Ce paquetage contient ces
+bibliothÃ¨ques et celles qui sont basÃ©es sur la libc 5 pour permettre
+aux anciennes applications de tourner sur les systÃ¨mes basÃ©s sur glibc
 (libc 6).
 
-%description -l pl
-Dawno, dawno temu aplikacje korzysta³y z wersji 5 biblioteki libc. Ten
-pakiet zawiera tê i kilka innych, pomocniczych bibliotek, umo¿liwiaj±c
-tym samym uruchomienie starszych programów. Przed zainstalowaniem,
-sprawd¼ jednak, czy nie istniej± ich nowsze wersje, dzia³aj±ce z
-bibliotek± libc 6.
+%description -l pl.UTF-8
+Dawno, dawno temu aplikacje korzystaÅ‚y z wersji 5 biblioteki libc. Ten
+pakiet zawiera tÄ™ i kilka innych, pomocniczych bibliotek, umoÅ¼liwiajÄ…c
+tym samym uruchomienie starszych programÃ³w. Przed zainstalowaniem,
+sprawdÅº jednak, czy nie istniejÄ… ich nowsze wersje, dziaÅ‚ajÄ…ce z
+bibliotekÄ… libc 6.
 
-%description -l pt_BR
-Contém as bibliotecas-padrão que são usadas por muitos programas
-no sistema. Para salvar espaço em disco e memória, e para
-facilitar atualizações, código comum no sistema é deixado em
-um lugar e compartilhado entre os programas. Este pacote contém
+%description -l pt_BR.UTF-8
+ContÃ©m as bibliotecas-padrÃ£o que sÃ£o usadas por muitos programas
+no sistema. Para salvar espaÃ§o em disco e memÃ³ria, e para
+facilitar atualizaÃ§Ãµes, cÃ³digo comum no sistema Ã© deixado em
+um lugar e compartilhado entre os programas. Este pacote contÃ©m
 os mais importantes conjuntos de bibliotecas compartilhadas, a
-biblioteca-padrão C, e a biblioteca matemática-padrão. Sem este
-pacote um sistema Linux não irá funcionar.
+biblioteca-padrÃ£o C, e a biblioteca matemÃ¡tica-padrÃ£o. Sem este
+pacote um sistema Linux nÃ£o irÃ¡ funcionar.
 
-%description -l tr
-Eski Linux sistemleri libc 5 üzerine kurulmuştu. Bu paket, libc 5
-kitaplıkları ve eski uygulamaların glibc (libc 6) üzerine kurulu olan
-sistemlerde çalışmasını sağlayan kitaplıkları içerir.
+%description -l tr.UTF-8
+Eski Linux sistemleri libc 5 Ã¼zerine kurulmuÅŸtu. Bu paket, libc 5
+kitaplÄ±klarÄ± ve eski uygulamalarÄ±n glibc (libc 6) Ã¼zerine kurulu olan
+sistemlerde Ã§alÄ±ÅŸmasÄ±nÄ± saÄŸlayan kitaplÄ±klarÄ± iÃ§erir.
 
 %prep
 %setup -q -n %{name}5
