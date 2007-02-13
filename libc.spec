@@ -1,10 +1,10 @@
 Summary:	The compatibility libraries needed by old libc.so.5 applications
-Summary(de.UTF-8):   Kompabilitäts-Libraries für alte libc.so.5-Anwendungen
-Summary(es.UTF-8):   Biblioteca compartida padrón para programas
-Summary(fr.UTF-8):   Librairies de compatibilité pour les vieilles appl. libc.so.5
-Summary(pl.UTF-8):   Biblioteki umożliwiające uruchomienie aplikacji libc.so.5
-Summary(pt_BR.UTF-8):   Biblioteca compartilhada padrão para programas
-Summary(tr.UTF-8):   Eski libc.so.5 uygulamaları ile uyumlululuğu sağlayan kitaplıklar
+Summary(de.UTF-8):	Kompabilitäts-Libraries für alte libc.so.5-Anwendungen
+Summary(es.UTF-8):	Biblioteca compartida padrón para programas
+Summary(fr.UTF-8):	Librairies de compatibilité pour les vieilles appl. libc.so.5
+Summary(pl.UTF-8):	Biblioteki umożliwiające uruchomienie aplikacji libc.so.5
+Summary(pt_BR.UTF-8):	Biblioteca compartilhada padrão para programas
+Summary(tr.UTF-8):	Eski libc.so.5 uygulamaları ile uyumlululuğu sağlayan kitaplıklar
 Name:		libc
 Version:	5.4.46
 Release:	5
